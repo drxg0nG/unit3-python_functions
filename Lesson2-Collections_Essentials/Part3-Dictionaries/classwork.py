@@ -1,10 +1,10 @@
 # 1
-print('"key_a": "value1", "key_b": 150, "key_c": False, "key_d": 50')
+print('"key_a": "value1", "key_b": 150, "key_d": 50')
 print('False')
 
 # 2
 print("120")
-print("60")
+print("60.0")
 
 # 3
 def get_user_bio(user):
