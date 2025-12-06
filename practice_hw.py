@@ -44,3 +44,27 @@ def safe_list_access(items, index):
 print(safe_list_access([10, 20, 30], 1)) # (20, True)
 print(safe_list_access([10, 20, 30], 10)) # (None, False)
 print(safe_list_access([], 0)) # (None, False)
+
+
+def grade_calculator(*scores, curve=0):
+    try:
+        average = sum(scores) / len(scores) + curve
+    except ZeroDivisionError:
+        return 0, "F"
+    if average >= 90:
+        letter = "A"
+    elif average >= 80:
+        letter = "B"
+    elif average >= 70:
+        letter = "C"
+    elif average >= 60:
+        letter = "D"
+    else:
+        letter = "F"
+    return average, letter
+
+
+print(grade_calculator(85, 90, 80)) # (85.0, "B")
+print(grade_calculator(70, 75, curve=10)) # (82.5, "B")
+print(grade_calculator()) # (0, "F")
+
